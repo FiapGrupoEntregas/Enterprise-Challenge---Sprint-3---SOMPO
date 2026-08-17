@@ -35,37 +35,37 @@ Este é o MVP com ~60% da solução completa em funcionamento, conforme escopo d
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
-│                        AGROSAFE PREDICTOR — Sprint 3                  │
-│                                                                        │
-│   [Sensores IoT]      [API Clima]      [GPS/GIS]                      │
+│                 AGROSAFE PREDICTOR — Sprint 3                        │
+│                                                                      │
+│   [Sensores IoT]      [API Clima]      [GPS/GIS]                     │
 │         │                  │                │                        │
 │         └──────────────────┴────────────────┘                        │
-│                            │  (simulate_ingestion.py)                 │
-│                            ▼                                          │
-│                 ┌────────────────────┐                                │
-│                 │   POST /telemetria  │  ← autenticado (X-API-Key)    │
-│                 │   Backend FastAPI   │  ← rate limit + log de uso    │
-│                 │  (backend/main.py)  │                                │
-│                 └──────────┬─────────┘                                │
-│                            │                                          │
+│                            │  (simulate_ingestion.py)                │
+│                            ▼                                         │
+│                 ┌────────────────────┐                               │
+│                 │   POST /telemetria │  ← autenticado (X-API-Key)    │
+│                 │   Backend FastAPI  │  ← rate limit + log de uso    │
+│                 │  (backend/main.py) │                               │
+│                 └──────────┬─────────┘                               │
+│                            │                                         │
 │              ┌─────────────┼──────────────┐                          │
 │              ▼                            ▼                          │
-│   ┌─────────────────────┐      ┌────────────────────────┐           │
-│   │  Banco (SQLite)      │      │  Modelo de Risco         │           │
-│   │  backend/database.py │◄────►│  Random Forest (Sprint 2)│           │
-│   │  telemetria, scores, │      │  backend/risk_model.py   │           │
-│   │  alertas, log_uso     │      └────────────────────────┘           │
-│   └──────────┬───────────┘                                            │
-│              │                                                        │
-│              ▼                                                        │
+│   ┌─────────────────────┐       ┌────────────────────────┐           │
+│   │  Banco (SQLite)      │      │  Modelo de Risco       │           │
+│   │  backend/database.py │◄────►│  Random Forest (Sprint 2)│         │
+│   │  telemetria, scores, │      │  backend/risk_model.py │           │
+│   │  alertas, log_uso    │      └────────────────────────┘           │
+│   └──────────┬───────────┘                                           │
+│              │                                                       │
+│              ▼                                                       │
 │   ┌─────────────────────────────┐                                    │
-│   │  GET /scores /alertas /resumo │                                  │
-│   └──────────────┬───────────────┘                                   │
-│                  ▼                                                    │
+│   │ GET /scores /alertas /resumo│                                    │
+│   └──────────────┬──────────────┘                                    │
+│                  ▼                                                   │
 │   ┌─────────────────────────────┐                                    │
-│   │  Dashboard (Streamlit)        │  → gestor de frota / operador     │
-│   │  dashboard/streamlit_app.py   │  → analista Sompo                 │
-│   └───────────────────────────────┘                                  │
+│   │  Dashboard (Streamlit)      │  → gestor de frota / operador      │
+│   │  dashboard/streamlit_app.py │  → analista Sompo                  │
+│   └─────────────────────────────┘                                    │
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
