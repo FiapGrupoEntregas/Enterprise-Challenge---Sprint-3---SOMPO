@@ -79,7 +79,9 @@ Este é o MVP com ~60% da solução completa em funcionamento, conforme escopo d
 
 ```
 sompo-sprint3/
-│
+├── sql/
+│   ├── schema_sqlite.sql            # Schema usado pelo backend (SQLite, MVP)
+│   └── dados_postgres_referencia.sql # Schema original da Sprint 2 (PostgreSQL) + queries analíticas
 ├── backend/
 │   ├── main.py            # Orquestrador FastAPI (endpoints, fluxo integrado)
 │   ├── database.py         # Engenharia de dados: schema + persistência (SQLite)
@@ -97,11 +99,9 @@ sompo-sprint3/
 ├── data/
 │   └── agrorisk_dataset.csv        # Dataset usado para treinar o modelo (Sprint 2)
 │
-├── sql/
-│   ├── schema_sqlite.sql            # Schema usado pelo backend (SQLite, MVP)
-│   └── dados_postgres_referencia.sql # Schema original da Sprint 2 (PostgreSQL) + queries analíticas
 │
 ├── docs/
+│   ├── diagrama-arquitetura.png      # Diagrama de arquitetura (entrada → banco → modelo → saída)
 │   └── diagrama-arquitetura.svg      # Versão vetorial/editável do diagrama
 │
 ├── requirements.txt
