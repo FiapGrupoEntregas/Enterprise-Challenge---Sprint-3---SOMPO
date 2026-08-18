@@ -102,7 +102,6 @@ sompo-sprint3/
 │   └── dados_postgres_referencia.sql # Schema original da Sprint 2 (PostgreSQL) + queries analíticas
 │
 ├── docs/
-│   ├── diagrama-arquitetura.png      # Diagrama de arquitetura (entrada → banco → modelo → saída)
 │   └── diagrama-arquitetura.svg      # Versão vetorial/editável do diagrama
 │
 ├── requirements.txt
