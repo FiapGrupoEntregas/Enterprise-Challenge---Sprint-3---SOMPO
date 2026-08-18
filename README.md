@@ -79,7 +79,7 @@ Este é o MVP com ~60% da solução completa em funcionamento, conforme escopo d
 
 ```
 sompo-sprint3/
-├── sql/
+├── SQL
 │   ├── schema_sqlite.sql            # Schema usado pelo backend (SQLite, MVP)
 │   └── dados_postgres_referencia.sql # Schema original da Sprint 2 (PostgreSQL) + queries analíticas
 ├── backend/
