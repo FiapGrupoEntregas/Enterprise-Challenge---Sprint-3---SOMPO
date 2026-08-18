@@ -7,7 +7,6 @@
 |---|---|---|
 | Jonattas Felipe | 572692 | 1TIAOB |
 | Bruna | 573509 | 1TIAOB |
-| Kaio | 573402 | 1TIAOB |
 | Natanael | 572474 | 1TIAOB |
 
 📧 Contato: rm572692@fiap.com.br
