@@ -1,1 +1,106 @@
-<img width="1400" height="900" alt="image" src="https://github.com/user-attachments/assets/829797af-6849-4d0d-8f5a-eeea6f944541" />
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b91c1c"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="900" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="700" y="45" text-anchor="middle" font-size="26" font-weight="700" fill="#0f172a">AgroSafe Predictor — Fluxo Integrado (Sprint 3)</text>
+  <text x="700" y="72" text-anchor="middle" font-size="14" fill="#64748b">Sompo Seguros · FIAP 1TIAOB · entrada de telemetria → banco → modelo de risco → saída</text>
+
+  <!-- ── Fontes de Dados ── -->
+  <text x="700" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#334155" letter-spacing="1">FONTES DE DADOS (reais ou simuladas)</text>
+
+  <g>
+    <rect x="150" y="130" width="220" height="70" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="260" y="160" text-anchor="middle" font-size="14" font-weight="600" fill="#075985">Sensores IoT</text>
+    <text x="260" y="180" text-anchor="middle" font-size="11" fill="#0369a1">umidade · inclinação</text>
+  </g>
+
+  <g>
+    <rect x="590" y="130" width="220" height="70" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="700" y="160" text-anchor="middle" font-size="14" font-weight="600" fill="#075985">API de Clima</text>
+    <text x="700" y="180" text-anchor="middle" font-size="11" fill="#0369a1">precipitação 3h</text>
+  </g>
+
+  <g>
+    <rect x="1030" y="130" width="220" height="70" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="1140" y="160" text-anchor="middle" font-size="14" font-weight="600" fill="#075985">GPS / GIS</text>
+    <text x="1140" y="180" text-anchor="middle" font-size="11" fill="#0369a1">distância de corpo d'água</text>
+  </g>
+
+  <!-- lines converge to simulate_ingestion -->
+  <path d="M260,200 L260,230 L700,230" fill="none" stroke="#4b5563" stroke-width="1.5"/>
+  <path d="M700,200 L700,230" fill="none" stroke="#4b5563" stroke-width="1.5"/>
+  <path d="M1140,200 L1140,230 L700,230" fill="none" stroke="#4b5563" stroke-width="1.5"/>
+  <line x1="700" y1="230" x2="700" y2="252" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Ingestão -->
+  <rect x="530" y="255" width="340" height="55" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="700" y="278" text-anchor="middle" font-size="13" font-weight="600" fill="#334155">simulate_ingestion.py</text>
+  <text x="700" y="296" text-anchor="middle" font-size="11" fill="#64748b">simulador de telemetria via HTTP</text>
+
+  <line x1="700" y1="310" x2="700" y2="345" stroke="#4b5563" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="720" y="332" font-size="11" fill="#4b5563">POST /telemetria</text>
+
+  <!-- ── Backend ── -->
+  <rect x="380" y="350" width="640" height="150" rx="14" fill="#eef2ff" stroke="#4338ca" stroke-width="2"/>
+  <text x="700" y="378" text-anchor="middle" font-size="16" font-weight="700" fill="#3730a3">Backend Integrador — FastAPI (backend/main.py)</text>
+
+  <g>
+    <rect x="405" y="392" width="180" height="42" rx="8" fill="#ffffff" stroke="#818cf8"/>
+    <text x="495" y="418" text-anchor="middle" font-size="12" fill="#3730a3">security.py</text>
+  </g>
+  <g>
+    <rect x="610" y="392" width="180" height="42" rx="8" fill="#ffffff" stroke="#818cf8"/>
+    <text x="700" y="418" text-anchor="middle" font-size="12" fill="#3730a3">models.py (validação)</text>
+  </g>
+  <g>
+    <rect x="815" y="392" width="180" height="42" rx="8" fill="#ffffff" stroke="#818cf8"/>
+    <text x="905" y="418" text-anchor="middle" font-size="12" fill="#3730a3">log_uso (auditoria)</text>
+  </g>
+
+  <text x="700" y="460" text-anchor="middle" font-size="12" fill="#4338ca">Autenticação (X-API-Key) · Rate limit · Tratamento de exceções</text>
+  <text x="700" y="480" text-anchor="middle" font-size="11" fill="#6366f1">401 sem chave válida · 422 dado inválido · 429 limite excedido</text>
+
+  <!-- Backend to DB and Model -->
+  <line x1="560" y1="500" x2="330" y2="560" stroke="#4b5563" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="840" y1="500" x2="1070" y2="560" stroke="#4b5563" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Banco -->
+  <rect x="150" y="565" width="360" height="110" rx="14" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="330" y="592" text-anchor="middle" font-size="15" font-weight="700" fill="#065f46">Banco de Dados (SQLite)</text>
+  <text x="330" y="612" text-anchor="middle" font-size="11" fill="#047857">backend/database.py</text>
+  <text x="330" y="634" text-anchor="middle" font-size="11" fill="#047857">telemetria · scores_risco</text>
+  <text x="330" y="652" text-anchor="middle" font-size="11" fill="#047857">historico_alertas · log_uso</text>
+
+  <!-- Modelo -->
+  <rect x="890" y="565" width="360" height="110" rx="14" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+  <text x="1070" y="592" text-anchor="middle" font-size="15" font-weight="700" fill="#9a3412">Modelo de Risco (Random Forest)</text>
+  <text x="1070" y="612" text-anchor="middle" font-size="11" fill="#c2410c">backend/risk_model.py</text>
+  <text x="1070" y="634" text-anchor="middle" font-size="11" fill="#c2410c">reaproveita modelo_agrorisk.py (Sprint 2)</text>
+  <text x="1070" y="652" text-anchor="middle" font-size="11" fill="#c2410c">acurácia 80.5% · CV 79.2% ± 1.6%</text>
+
+  <!-- back to output -->
+  <line x1="330" y1="675" x2="620" y2="740" stroke="#4b5563" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="1070" y1="675" x2="780" y2="740" stroke="#4b5563" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Saída -->
+  <rect x="480" y="745" width="440" height="60" rx="12" fill="#fef2f2" stroke="#b91c1c" stroke-width="2"/>
+  <text x="700" y="770" text-anchor="middle" font-size="14" font-weight="700" fill="#991b1b">Score de Risco + Alerta (0–100 · BAIXO/MEDIO/ALTO/CRITICO)</text>
+  <text x="700" y="790" text-anchor="middle" font-size="11" fill="#b91c1c">GET /scores · /alertas · /resumo</text>
+
+  <line x1="700" y1="805" x2="700" y2="828" stroke="#b91c1c" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+  <!-- Dashboard -->
+  <rect x="450" y="833" width="500" height="55" rx="12" fill="#faf5ff" stroke="#7e22ce" stroke-width="2"/>
+  <text x="700" y="858" text-anchor="middle" font-size="14" font-weight="700" fill="#6b21a8">Dashboard (Streamlit) — dashboard/streamlit_app.py</text>
+  <text x="700" y="876" text-anchor="middle" font-size="11" fill="#7e22ce">Operador · Gestor de Frota · Analista Sompo</text>
+
+</svg>
