@@ -11,7 +11,7 @@
 
 📧 Contato: rm572692@fiap.com.br
 
-🎥 **Vídeo de apresentação — Sprint 3:** *[adicionar link aqui após gravação — configurar como "não listado" no YouTube]*
+🎥 **Vídeo de apresentação — Sprint 3:** https://youtu.be/z5NScVFebSw?si=D26EqLAH8j8obiik
 
 ---
 
@@ -238,4 +238,4 @@ Resposta esperada (score/alerta calculados pelo modelo em tempo real):
 
 - 🎥 [Vídeo Sprint 1](https://youtu.be/3Em1MsapoEM?si=QdFbxhZFvli6SFoB)
 - 🎥 [Vídeo Sprint 2](https://youtu.be/LQdnhLRkRbA)
-- 🎥 Vídeo Sprint 3: *adicionar após gravação*
+- 🎥 [Vídeo Sprint 3](https://youtu.be/z5NScVFebSw?si=D26EqLAH8j8obiik).
